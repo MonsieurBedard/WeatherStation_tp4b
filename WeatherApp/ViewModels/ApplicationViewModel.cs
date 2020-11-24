@@ -68,7 +68,7 @@ namespace WeatherApp.ViewModels
             string apiKey = Properties.Settings.Default.apiKey;
             if (apiKey == null || apiKey == string.Empty)
             {
-                MessageBox.Show("There is no api key, you should add one in the settings page.", "Warning");
+                tvm.RawText = "There is no api key, you should add one in the settings page.";
             } else
             {
                 ows = new OpenWeatherService(apiKey);

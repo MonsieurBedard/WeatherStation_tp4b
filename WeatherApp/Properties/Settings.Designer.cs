@@ -25,7 +25,7 @@ namespace WeatherApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2532a6ccec0f3d1f8a62a2f79ee29a04")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string apiKey {
             get {
                 return ((string)(this["apiKey"]));
