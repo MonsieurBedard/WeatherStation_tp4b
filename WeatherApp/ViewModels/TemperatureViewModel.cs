@@ -98,7 +98,13 @@ namespace WeatherApp.ViewModels
         {
             CurrentTemp = await TemperatureService.GetTempAsync();
 
-            RawText = $"Time : {CurrentTemp.DateTime.ToLocalTime()} {Environment.NewLine}Temperature : {CurrentTemp.Temperature}";
+            if (currentTemp != null)
+            {
+                RawText = $"Time : {CurrentTemp.DateTime.ToLocalTime()} {Environment.NewLine}Temperature : {CurrentTemp.Temperature}";
+            } else
+            {
+                RawText = "Could not get temperature. Invalid city or api key.";
+            }
         }
 
         public double CelsiusInFahrenheit(double c)

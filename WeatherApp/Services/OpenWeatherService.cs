@@ -20,12 +20,19 @@ namespace WeatherApp.Services
         public async Task<TemperatureModel> GetTempAsync()
         {
             var temp = await owp.GetCurrentWeatherAsync();
+            TemperatureModel result;
 
-            var result = new TemperatureModel
+            if (temp != null)
             {
-                DateTime = DateTime.UnixEpoch.AddSeconds(temp.DateTime),
-                Temperature = temp.Main.Temperature
-            };
+                result = new TemperatureModel
+                {
+                    DateTime = DateTime.UnixEpoch.AddSeconds(temp.DateTime),
+                    Temperature = temp.Main.Temperature
+                };
+            } else
+            {
+                result = null;
+            }
 
             return result;
         }
